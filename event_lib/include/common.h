@@ -12,10 +12,10 @@
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
 /* Calls a function provided by address with variadic arguments, useful for development. */
-static void callFn(void* pFunc, ...)   
+static void callFn(void* pFunc, ...)
 {
         void *arg = (void*)(__builtin_apply_args() + 0x4);      // skip first argument
-        void *ret = __builtin_apply(pFunc, arg, 512);
+        void *ret = __builtin_apply(pFunc, arg, 100);
         __builtin_return(ret);
 }
 
